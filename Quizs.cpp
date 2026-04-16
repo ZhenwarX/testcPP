@@ -3,6 +3,97 @@ using namespace std;
 
 int main() {
 
+ // Q333. Write a C++ program that is printing the corresponding ASCII of each letter of your name. (Ex: Znar -> int(‘Z’), int(‘n’), int(‘a’), int(‘r’).
+string name = "AHMED";
+for (char c : name) {
+    cout << "THE ASCII VALUE OF " << c << " IS: " << int(c) << endl;
+}
+
+ //Q4. Create a C++ program that asks the user for the total study hours and study days per week, then calculates and displays the average study hours per day.
+double totalHours, days, average;
+cout << "Enter total study hours: ";
+cin >> totalHours;
+cout << "Enter number of study days per week: ";
+cin >> days;
+average = totalHours / days;
+cout << "Average study hours per day: " << average << endl;
+
+    //Q6. Write a C++ program that asks the user to input two numbers (a and b) and calculates the following expression: (a^2 + b^2) / (2ab).
+double a, b, result;
+cout << "Enter first number (a): ";
+cin >> a;
+cout << "Enter second number (b): ";
+cin >> b;
+result = (a*a + b*b) / (2*a*b);
+cout << "Result = " << result << endl;
+
+
+    // Write a C++ program that generates a random number between 1 and 100, then prompts the user to guess the number. The program should provide feedback on whether the guess is too low, too high, or correct, and should continue until the user guesses the correct number.
+    srand(time(0));
+    int num1 = rand();           
+    int num2 = rand() % 100;       
+    int num3 = rand() % 36 + 5;
+    cout << "1st random number: " << num1 << endl;
+    cout << "2nd random number (0-99): " << num2 << endl;
+    cout << "3rd random number (5-40): " << num3 << endl;
+
+
+    //Q9. Write a C++ code that generate 3 random numbers between 1 - 100 and find the average of these random numbers.
+    srand(time(0));
+    int n1 = rand() % 36 + 5; 
+    int n2 = rand() % 100 + 1;
+    int n3 = rand() % 100 + 1;
+    double average = (n1 + n2 + n3) / 3.0;
+    cout << "Random number 1: " << n1 << endl;
+    cout << "Random number 2: " << n2 << endl;
+    cout << "Random number 3: " << n3 << endl;
+    cout << "Average: " << average << endl;
+
+
+    //Q10. Write a C++ program that asks the user to input the price of three items and a discount percentage. Then, calculate and display the total price before and after applying the discount.
+    double price1, price2, price3, discountPercent;
+    cout << "Enter price of item 1: ";
+    cin >> price1;
+    cout << "Enter price of item 2: ";
+    cin >> price2;
+    cout << "Enter price of item 3: ";
+    cin >> price3;
+    cout << "Enter discount percentage: ";
+    cin >> discountPercent;
+    double totalBefore = price1 + price2 + price3;
+    double discountAmount = totalBefore * (discountPercent / 100.0);
+    double totalAfter = totalBefore - discountAmount;
+    cout << "Total before discount: " << totalBefore << endl;
+    cout << "Total after discount: " << totalAfter << endl;
+
+
+     //Q11. Write a C++ program that generates 4 random numbers in the following ranges: (7-13), (80-102), (63-82), and (23-47). Then, calculate and display the product of the first and third numbers, and the quotient of the second and fourth numbers.
+    srand(time(0));
+    int a = rand() % 7 + 7;    // 7-13
+    int b = rand() % 23 + 80;  // 80-102
+    int c = rand() % 20 + 63;  // 63-82
+    int d = rand() % 25 + 23;  // 23-47
+    cout << "a (7-13): " << a << endl;
+    cout << "b (80-102): " << b << endl;
+    cout << "c (63-82): " << c << endl;
+    cout << "d (23-47): " << d << endl;
+    cout << "a * c = " << a * c << endl;
+    cout << "b / d = " << (double)b / d << endl;
+
+
+    //Q12. Write a C++ program that generates two random numbers between 1 and 10, then prompts the user to enter the product of these two numbers. The program should check if the user's answer is correct and display an appropriate message.
+    srand(time(0));
+    int num1 = rand() % 10 + 1; // 1 to 10
+    int num2 = rand() % 10 + 1; // 1 to 10
+    int userAnswer;
+    cout << "What is " << num1 << " x " << num2 << "? ";
+    cin >> userAnswer;
+    if (userAnswer == num1 * num2) {
+        cout << "Correct!" << endl;
+    } else {
+        cout << "Wrong. The correct answer is " << num1 * num2 << endl;
+    }
+    
     // This program calculates the average of three numbers and checks if it is greater than 10.
     //Q1    
     double n1, n2, n3, avg;
